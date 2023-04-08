@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculate</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="input-fields">
+      <label for="calc-input" class="bill-header">bill</label>
+      <div class="input-relative">
+        <input type="text" id="calc-input" placeholder="Enter your bill">
+        <button onclick="removeCalc()" class="cancel-button"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="row">
+        <button onclick="calcPerc(5)" class="calc-btn">5%</button>
+        <button onclick="calcPerc(10)" class="calc-btn">10%</button>
+        <button onclick="calcPerc(15)" class="calc-btn">15%</button>
+        <button onclick="calcPerc(25)" class="calc-btn">25%</button>
+        <button onclick="calcPerc(50)" class="calc-btn">50%</button>
+        <input onclick="calcCustom()" placeholder="Custom" id="custom-btn">
+      </div>
+    </div>
+    <div class="output-fields">
+      <p class="text-area">Tip Amount:</p>
+      <p id="calculated">0$</p>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

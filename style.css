@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.input-fields {
+  margin: 20px auto 100px;
+  width: 50%;
+}
+.output-fields {
+  margin: 0 auto;
+  max-width: 50%;
+  background: rgb(197, 228, 231);
+  border: 2px solid rgb(0, 71, 75);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 3px;
+  padding: 15px 10px 15px;
+}
+.row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+.bill-header {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#calc-input {
+  width: 100%;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: 2px solid rgb(0, 71, 75);
+  border-radius: 3px;
+  outline: none;
+  margin-top: 20px;
+  margin-right: 5px;
+}
+.input-relative {
+  position: relative;
+}
+.cancel-button {
+  position: absolute;
+  bottom: 14px;
+  right: 13px;
+  border: 0;
+  background: transparent;
+}
+.cancel-button i {
+  font-size: 24px;
+  cursor: pointer;
+}
+#calculated {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.calc-btn {
+  font-size: 24px;
+  text-align: center;
+  width: 220px;
+  padding: 10px 20px;
+  border: 2px solid rgb(0, 71, 75);
+  border-radius: 3px;
+  background: rgb(0, 71, 75);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+#custom-btn {
+  font-size: 24px;
+  text-align: center;
+  width: 220px;
+  padding: 10px 20px;
+  border: 2px solid rgb(0, 71, 75);
+  border-radius: 3px;
+  background: rgb(38, 194, 174);
+  color: black;
+}
+#custom-btn::placeholder {
+  color: white;
+}
+.text-area {
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 960px) {
+  .row {
+    gap: 20px;
+  }
+  .calc-btn, #custom-btn {
+    display: block;
+    width: 100%;
+  }
+}
