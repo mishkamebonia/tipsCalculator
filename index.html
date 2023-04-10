@@ -13,8 +13,8 @@
     <div class="input-fields">
       <label for="calc-input" class="bill-header">bill</label>
       <div class="input-relative">
-        <input type="text" id="calc-input" placeholder="Enter your bill">
-        <button onclick="removeCalc()" class="cancel-button"><i class="fa-solid fa-xmark"></i></button>
+        <input type="text" id="calc-input" placeholder="Enter Your Bill">
+        <!-- <button onclick="removeCalc()" class="cancel-button"><i class="fa-solid fa-xmark"></i></button> -->
       </div>
       <div class="row">
         <button onclick="calcPerc(5)" class="calc-btn">5%</button>
@@ -22,13 +22,35 @@
         <button onclick="calcPerc(15)" class="calc-btn">15%</button>
         <button onclick="calcPerc(25)" class="calc-btn">25%</button>
         <button onclick="calcPerc(50)" class="calc-btn">50%</button>
-        <input onclick="calcCustom()" placeholder="Custom" id="custom-btn">
+        <div class="custom-btn">
+          <input placeholder="Custom" id="custom-input">
+          <button onclick="calcCustom()" id="custom-btn">
+            <i class="fa-solid fa-greater-than"></i>
+          </button>
+        </div>
+      </div>
+      <div class="output-fields">
+        <p class="text-area">Total:</p>
+        <p id="calculated">0.00$</p>
       </div>
     </div>
-    <div class="output-fields">
-      <p class="text-area">Tip Amount:</p>
-      <p id="calculated">0$</p>
+    <div class="plus-btn-row">
+      <button id="plus-btn">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <label for="plus-btn" class="plus-btn-text">NUMBER OF PEOPLE</label>
     </div>
+    <div class="input-fields">
+      <label for="people-input" class="bill-header">Number of People</label>
+      <div class="input-relative">
+        <input type="text" id="people-input" placeholder="Enter Number of People">
+        <div class="output-fields">
+          <p class="text-area">Tip Amount:</p>
+          <p id="calculated-per-person">0.00$</p>
+        </div>
+      </div>
+    </div>
+    <button onclick="removeCalc()" id="del-btn">reset</button>
   </div>
 <script src="script.js"></script>
 </body>

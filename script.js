@@ -1,27 +1,48 @@
+const inputValue = document.getElementById("calc-input")
+const outputValue = document.getElementById("calculated")
+const personInputValue = document.getElementById("people-input")
+const personOutputValue = document.getElementById("calculated-per-person")
+const btnValue = document.getElementById("custom-input")
+
 const calcPerc = function(num) {
-  let inputValue = document.getElementById("calc-input").value
-  let outputValue = document.getElementById("calculated")
-  const slashNum = ((inputValue * num) / 100).toFixed(2)
+  const slashNum = ((inputValue.value * num) / 100).toFixed(2)
   outputValue.innerHTML = slashNum + "$"
+
+  const perPersonSlash = (slashNum / personInputValue.value).toFixed(2)
+  personOutputValue.innerHTML = perPersonSlash + "$"
+
+  if(personInputValue.value == 0) {
+    personOutputValue.innerHTML = "0.00$"
+    
+    if(inputValue.value == 0) {
+      outputValue.innerHTML = "0.00$"
+    }
+  }
 }
 
 const calcCustom = function() {
-  let inputValue = document.getElementById("calc-input").value
-  let outputValue = document.getElementById("calculated")
-  let btnValue = document.getElementById("custom-btn").value
-  const slashNum = (inputValue * btnValue) / 100
+  const slashNum = (inputValue.value * btnValue.value) / 100
+  const perPersonSlash = slashNum / personInputValue.value
 
-  if(btnValue > 100 || btnValue == 0) {
-    return outputValue.innerHTML = "0$"
-  }else if(btnValue < 100) {
-    outputValue.innerHTML = slashNum + "$"
+  if(btnValue.value > 100 || btnValue.value == 0) {
+    outputValue.innerHTML = "0.00$"
+    personOutputValue.innerHTML = "0.00$"
+  }else if(btnValue.value < 100) {
+    outputValue.innerHTML = slashNum.toFixed(2) + "$"
+    personOutputValue.innerHTML = perPersonSlash.toFixed(2) + "$"
+
+    if(personInputValue.value == 0) {
+      personOutputValue.innerHTML = "0.00$"
+    }
   }
 }
 
 const removeCalc = function() {
-  let inputValue = document.getElementById("calc-input")
-  let outputValue = document.getElementById("calculated")
-
   inputValue.value = ""
-  outputValue.innerHTML = "0$"
+  outputValue.innerHTML = "0.00$"
+
+  personInputValue.value = ""
+  personOutputValue.innerHTML = "0.00$"
+
+  btnValue.value = ""
 }
