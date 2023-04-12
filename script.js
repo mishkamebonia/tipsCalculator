@@ -3,6 +3,14 @@ const outputValue = document.getElementById("calculated")
 const personInputValue = document.getElementById("people-input")
 const personOutputValue = document.getElementById("calculated-per-person")
 const btnValue = document.getElementById("custom-input")
+const calcBtn = document.querySelectorAll(".calc-btn")
+
+calcBtn.forEach(btnEl => {
+  btnEl.addEventListener('click', function() {
+    document.querySelector('.active')?.classList.remove('active')
+    btnEl.classList.add('active')
+  })
+})
 
 const calcPerc = function(num) {
   const slashNum = ((inputValue.value * num) / 100).toFixed(2)
@@ -45,4 +53,8 @@ const removeCalc = function() {
   personOutputValue.innerHTML = "0.00$"
 
   btnValue.value = ""
+}
+
+const changeIcon = function(icon) {
+  icon.classList.toggle('fa-xmark')
 }

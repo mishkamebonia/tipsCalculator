@@ -24,7 +24,7 @@
         <button onclick="calcPerc(50)" class="calc-btn">50%</button>
         <div class="custom-btn">
           <input placeholder="Custom" id="custom-input">
-          <button onclick="calcCustom()" id="custom-btn">
+          <button onclick="calcCustom()" id="custom-btn" class="calc-btn">
             <i class="fa-solid fa-greater-than"></i>
           </button>
         </div>
@@ -34,21 +34,18 @@
         <p id="calculated">0.00$</p>
       </div>
     </div>
-    <div class="plus-btn-row">
-      <button id="plus-btn">
-        <i class="fa-solid fa-plus"></i>
-      </button>
-      <label for="plus-btn" class="plus-btn-text">NUMBER OF PEOPLE</label>
-    </div>
-    <div class="input-fields">
+        <input type="checkbox" id="toggle">
+        <div class="toggle-btn">
+          <label for="toggle" class="plus-btn-text"><i onclick="changeIcon(this)" class="fa-solid fa-plus"></i></label>
+          <p class="toggle-par">NUMBER OF PEOPLE</p>
+        </div>
+    <div class="input-person-block">
       <label for="people-input" class="bill-header">Number of People</label>
-      <div class="input-relative">
         <input type="text" id="people-input" placeholder="Enter Number of People">
         <div class="output-fields">
           <p class="text-area">Tip Amount:</p>
           <p id="calculated-per-person">0.00$</p>
         </div>
-      </div>
     </div>
     <button onclick="removeCalc()" id="del-btn">reset</button>
   </div>
